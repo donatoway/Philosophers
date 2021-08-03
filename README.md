@@ -1,1 +1,4 @@
-# Philosophers is a project that introduces basics of multi-threaded processes and parallelism\n
+# Philosophers 
+- is a project that introduces basics of multi-threaded processes and parallelism
+
+
