@@ -1,4 +1,4 @@
-SRCS	= philo_bonus.c utils_bonus.c
+SRCS	= philo_bonus.c utils_bonus.c init.c launcher.c
 
 OBJS	= $(SRCS:.c=.o)
 

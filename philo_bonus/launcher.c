@@ -1,97 +1,5 @@
 #include "includes/philo_bonus.h"
 
-/*
-long long time_diff(long long past, long long pres)
-{
-    return (pres - past);
-}
-
-long long	timestamp(void)
-{
-	struct timeval	t;
-
-	gettimeofday(&t, NULL);
-	return ((t.tv_sec * 1000) + (t.tv_usec / 1000));
-}
-
-void    ft_error(t_philo *philo)
-{
-    if (philo->error == ARG_NUM)
-        write(2, "ERROR: Wrong number of arg\n", 28);
-    if (philo->error == ARG_NOT_NUM)
-        write(2, "ERROR: arg not number\n", 23);
-    if (philo->error == MUST_EAT)
-        write(2, "ERROR: number to must eat wrong\n",33);
-    if (philo->error == PHILO_NUM)
-        write(2, "ERROR: wrong number of philosophers\n",37);
-    if (philo->error == MUTEX)
-        write (2, "ERROR: MUTEX\n", 14);
-    if (philo->error == LAUNCH)
-        write(2, "ERROR: to launch program\n", 26);
-    if (philo->error == INIT)
-        write(2, "ERROR: initialization\n", 23);
-}
-*/
-/*
-void    check_if_nb(t_philo *philo, char **av)
-{
-    int i;
-    int j;
-
-    i = 1;
-    while (av[i])
-    {
-        j = 0;
-        while (av[i][j])
-        {
-            if (av[i][j] >= '0' && av[i][j] <= '9')
-                j++;
-            else
-            {
-                philo->error = ARG_NOT_NUM;
-                break;
-            }
-        }
-        i++; 
-    }
-}
-
-void    init_arg(t_philo *philo, char **av)
-{
-    philo->n_philo = ft_atoi(av[1]);
-    if (philo->n_philo > 250 || philo->n_philo < 1)
-        philo->error = PHILO_NUM;
-    philo->time_die = ft_atoi(av[2]);
-    philo->time_eat = ft_atoi(av[3]);
-    philo->time_sleep = ft_atoi(av[4]);
-    if (av[5])
-    {
-        philo->must_eat = ft_atoi(av[5]);
-        if (philo->must_eat <= 0)
-            philo->error = MUST_EAT;
-    }
-    else
-        philo->must_eat = -1;
-    philo->died = 0;
-    philo->all_ate = 0;
-}
-
-
-int     get_arg(t_philo *philo, int ac, char **av)
-{
-    philo->error = 0;
-    if (ac != 5 && ac != 6)
-        philo->error = ARG_NUM;
-    check_if_nb(philo, av);
-    if (philo->error != 0)
-        return (1);
-    else
-        init_arg(philo, av);
-    return (0);
-}
-*/
-
-/*
 void    philo_eat(struct_philo *phi_str, t_philo *philo)
 {
     long long t;
@@ -113,7 +21,6 @@ void    philo_eat(struct_philo *phi_str, t_philo *philo)
     sem_post(philo->forks);
     phi_str->last_meal = timestamp();
     sem_post(philo->forks);
-
 }
 
 void    *check_death(void   *philosopher)
@@ -227,49 +134,5 @@ int     launch_program(t_philo *philo)
     }
     int ret;
     close_program(philo);
-    return (0);
-}
-*/
-int     init_all(t_philo *philo)
-{
-    int i;
-
-    i = philo->n_philo;
-    while (--i >= 0)
-    {
-        philo->philosophers[i].nb_ate = 0;
-		philo->philosophers[i].last_meal = 0;
-		philo->philosophers[i].t_philo = philo;
-        philo->philosophers[i].id = i;
-    }
-    sem_unlink("/forks");
-    sem_unlink("/display");
-    sem_unlink("/check_meal");
-    philo->forks = sem_open("/forks", O_CREAT, S_IRWXU, philo->n_philo);
-    philo->display = sem_open("/display", O_CREAT, S_IRWXU, 1);
-    philo->check_meal = sem_open("/check_meal", O_CREAT, S_IRWXU, 1);
-    return (0);
-}
-
-int main(int ac, char **av)
-{
-    t_philo philo;
-
-    if (get_arg(&philo, ac, av) != 0)
-    {
-        ft_error(&philo);
-        return (1);
-    }
-    if (init_all(&philo))
-    {
-        ft_error(&philo);
-        return (1);
-    }
-    if (launch_program(&philo))
-    {
-        philo.error = LAUNCH;
-        ft_error(&philo);
-        return (1);
-    }
     return (0);
 }
