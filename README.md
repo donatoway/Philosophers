@@ -1,5 +1,8 @@
-# Philosophers 
+![Uploading philosofi1.png…]()
+
+# Philosophers
 - is a project that introduces basics of multi-threaded processes and parallelism
+- the purpose of this program is to emulate the famous problem of philosophers sitting around a table, each philosopher has a fork on his left and each philosopher eats with 2 forks. The program is given as parameters {n°philosophers},{time to die},{time to eat},{time to sleep},{optional how many times they have to eat}, every time a philosopher finishes eating, the time from the last meal begins to run, if a philosopher does not eat before the time to die expires then the philosopher dies and the program ends otherwise it continues to run
 
 # What mean Thread?
 - A thread can be thought of as a procedure that works in parallel with others
