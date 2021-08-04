@@ -15,8 +15,7 @@ your own flow of control. Each procedure to be performed in parallel will be a t
 - than ./philo [n°philo][time to die][time to eat][time sleep]  
 - optinal[how many time each philo have to eat]
 ![maxresdefault](https://user-images.githubusercontent.com/61160587/128102293-c3230a71-1a3a-44e5-b753-6cf1e5bc4c5d.jpeg)
-# Advantages and Disadvantages of Using Thread
-Advantages:
+# Advantage using thread
 - Multiple streams of execution.
 - simple handling of asynchronous events (I / O for example)
 - Fast communications. All threads in a process share the same space as
