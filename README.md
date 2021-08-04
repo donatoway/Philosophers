@@ -1,4 +1,3 @@
-<img width="550" alt="capture_2020-06-05-21-19-58" src="https://user-images.githubusercontent.com/61160587/128102408-1303d063-1650-4096-9012-e43df2d1deb2.png">
 # Philosophers
 ![scultura-raffigurante-socrate](https://user-images.githubusercontent.com/61160587/128102059-3b846b1a-659f-42f9-9674-cf59eeb8b195.jpeg)
 
