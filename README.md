@@ -1,4 +1,5 @@
-![Uploading philosofi1.png…]()
+![philosofi1](https://user-images.githubusercontent.com/61160587/128101232-57cc9508-c829-4cf6-b426-c2b6c4aa13f6.png)
+
 
 # Philosophers
 - is a project that introduces basics of multi-threaded processes and parallelism
