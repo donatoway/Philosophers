@@ -1,6 +1,5 @@
 ![philosofi1](https://user-images.githubusercontent.com/61160587/128101232-57cc9508-c829-4cf6-b426-c2b6c4aa13f6.png)
 
-[cd --]
 # Philosophers
 - is a project that introduces basics of multi-threaded processes and parallelism
 - the purpose of this program is to emulate the famous problem of philosophers sitting around a table, each philosopher has a fork on his left and each philosopher eats with 2 forks. The program is given as parameters {n°philosophers},{time to die},{time to eat},{time to sleep},{optional how many times they have to eat}, every time a philosopher finishes eating, the time from the last meal begins to run, if a philosopher does not eat before the time to die expires then the philosopher dies and the program ends otherwise it continues to run
@@ -10,6 +9,10 @@
 procedure within a process. To run in parallel with the rest of the process, a thread must have
 data structures ie its own execution environment, to realize
 your own flow of control. Each procedure to be performed in parallel will be a thread.
+
+# Program usage
+- inside the philo folder or philo_bonus run Make than ./philo [n°philo][time to die][time to eat][time sleep]  optinal[how many time each philo have to eat]
+
 
 # Advantages and Disadvantages of Using Thread
 
